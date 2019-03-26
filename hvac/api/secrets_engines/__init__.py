@@ -1,4 +1,5 @@
 """Vault secrets engines endpoints"""
+from hvac.api.secrets_engines.database import Database
 from hvac.api.secrets_engines.gcp import Gcp
 from hvac.api.secrets_engines.aws import Aws
 from hvac.api.secrets_engines.azure import Azure
@@ -12,6 +13,8 @@ from hvac.api.vault_api_category import VaultApiCategory
 __all__ = (
     'Aws',
     'Azure',
+    'Database',
+    'Gcp',
     'Identity',
     'Kv',
     'KvV1',
@@ -27,6 +30,7 @@ class SecretsEngines(VaultApiCategory):
     implemented_classes = [
         Aws,
         Azure,
+        Database,
         Gcp,
         Identity,
         Kv,
@@ -37,8 +41,6 @@ class SecretsEngines(VaultApiCategory):
         'AliCloud',
         'Azure',
         'Consul',
-        'Database',
-        'Gcp',
         'GcpKms',
         'Nomad',
         'Pki',

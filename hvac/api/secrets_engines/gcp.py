@@ -2,9 +2,8 @@
 # -*- coding: utf-8 -*-
 """Gcp methods module."""
 from hvac import exceptions
-from hvac.api import VaultApiBase
-from hvac.constants.aws import ALLOWED_CREDS_ENDPOINTS
-from hvac.constants.gcp import DEFAULT_MOUNT_POINT
+from hvac.api.vault_api_base import VaultApiBase
+from hvac.constants.gcp import DEFAULT_MOUNT_POINT, ALLOWED_CREDS_ENDPOINTS
 
 
 class Gcp(VaultApiBase):
@@ -14,7 +13,7 @@ class Gcp(VaultApiBase):
             error_msg = 'invalid endpoint argument provided "{arg}", supported types: "{allowed_endpoints}"'
             raise exceptions.ParamValidationError(error_msg.format(
                 arg=endpoint,
-                allowed_endpoints=', '.join(self.ALLOWED_CREDS_ENDPOINTS),
+                allowed_endpoints=', '.join(ALLOWED_CREDS_ENDPOINTS),
             ))
 
         api_path = '/v1/{mount_point}/{endpoint}/{roleset}'.format(
