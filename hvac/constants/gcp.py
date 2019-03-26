@@ -5,3 +5,4 @@
 DEFAULT_MOUNT_POINT = 'gcp'
 ALLOWED_ROLE_TYPES = ['iam', 'gce']
 GCP_CERTS_ENDPOINT = 'https://www.googleapis.com/oauth2/v3/certs'
+ALLOWED_CREDS_ENDPOINTS = ['token', 'key']

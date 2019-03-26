@@ -1,4 +1,5 @@
 """Vault secrets engines endpoints"""
+from hvac.api.secrets_engines.gcp import Gcp
 from hvac.api.secrets_engines.aws import Aws
 from hvac.api.secrets_engines.azure import Azure
 from hvac.api.secrets_engines.identity import Identity
@@ -26,6 +27,7 @@ class SecretsEngines(VaultApiCategory):
     implemented_classes = [
         Aws,
         Azure,
+        Gcp,
         Identity,
         Kv,
         Transit,
